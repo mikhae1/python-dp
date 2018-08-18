@@ -1,0 +1,18 @@
+---
+default:
+  general:
+    # this will be merged to the remote and local section
+    general_log: ./logs/general.log
+
+  remote:
+    # settings for the commands that will be run remotely
+    log:
+      web: /var/log/httpd.log
+      queue: /var/log/queue.log
+    reload_script: /usr/local/bin/reload
+    restart_script: /usr/local/bin/restart
+    pre_run: echo 'no reset dir script'
+    post_run: /usr/local/bin/noodoo_status
+
+  local:
+    # settings for the commands that will be run localy
